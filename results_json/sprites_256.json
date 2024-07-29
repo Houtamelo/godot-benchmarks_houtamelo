@@ -1,0 +1,14 @@
+{
+	"benchmarks": [
+		{
+			"category": "Tilemap > Tilemap Vs Sprite",
+			"name": "Single Sprites 256",
+			"results": {
+				"idle": 4.891,
+				"render_cpu": 4.28,
+				"render_gpu": 0.1842,
+				"time": 271.8
+			}
+		}
+	]
+}

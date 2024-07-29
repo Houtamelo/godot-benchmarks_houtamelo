@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bm1pqj6df08bj"]
+
+[ext_resource type="TileSet" uid="uid://nruc4hw63ckl" path="res://benchmarks/tilemap_colliders/tile_set.tres" id="1_51rpv"]
+
+[node name="SceneTilemap" type="TileMapLayer"]
+tile_set = ExtResource("1_51rpv")
+navigation_enabled = false

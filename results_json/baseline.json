@@ -1,0 +1,14 @@
+{
+	"benchmarks": [
+		{
+			"category": "Baseline > Baseline",
+			"name": "Baseline",
+			"results": {
+				"idle": 0.5178,
+				"render_cpu": 0.06442,
+				"render_gpu": 0.06496,
+				"time": 0.0074
+			}
+		}
+	]
+}

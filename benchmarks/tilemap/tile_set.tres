@@ -1,0 +1,32 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://jw0t2f2ih3er"]
+
+[ext_resource type="Texture2D" uid="uid://ctopmbnc1hyat" path="res://supplemental/tiles.png" id="1_8wcow"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nv5cx"]
+texture = ExtResource("1_8wcow")
+texture_region_size = Vector2i(32, 32)
+0:0/next_alternative_id = 10
+0:0/0 = 0
+0:0/1 = 1
+0:0/1/flip_h = true
+0:0/2 = 2
+0:0/2/flip_v = true
+0:0/3 = 3
+0:0/3/flip_h = true
+0:0/3/flip_v = true
+0:0/4 = 4
+0:0/4/transpose = true
+0:0/5 = 5
+0:0/5/flip_h = true
+0:0/5/transpose = true
+0:0/6 = 6
+0:0/6/flip_v = true
+0:0/6/transpose = true
+0:0/7 = 7
+0:0/7/flip_h = true
+0:0/7/flip_v = true
+0:0/7/transpose = true
+
+[resource]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_nv5cx")

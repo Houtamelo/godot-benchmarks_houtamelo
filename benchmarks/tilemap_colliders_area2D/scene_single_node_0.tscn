@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://drjusjuopilkw"]
+
+[ext_resource type="Texture2D" uid="uid://ctopmbnc1hyat" path="res://supplemental/tiles.png" id="1_elqm3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oymuu"]
+size = Vector2(32, 32)
+
+[node name="SceneSingleNode" type="Sprite2D"]
+texture = ExtResource("1_elqm3")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="Area2D" type="Area2D" parent="."]
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_oymuu")
+debug_color = Color(0.958839, 0.11775, 0.421987, 0.42)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_oymuu")

@@ -1,0 +1,38 @@
+./benchmarks.exe -- --run-benchmarks --include-benchmarks="tilemap/tilemap_vs_sprite/tilemap_128" --save-json="tilemap_128.json"
+./benchmarks.exe -- --run-benchmarks --include-benchmarks="tilemap/tilemap_vs_sprite/tilemap_256" --save-json="tilemap_256.json"
+./benchmarks.exe -- --run-benchmarks --include-benchmarks="tilemap/tilemap_vs_sprite/single_sprites_128" --save-json="single_sprites_128.json"
+./benchmarks.exe -- --run-benchmarks --include-benchmarks="tilemap/tilemap_vs_sprite/single_sprites_256" --save-json="single_sprites_256.json"
+
+
+./benchmarks.exe -- --run-benchmarks --include-benchmarks="tilemap_colliders/tilemap_vs_sprite/tilemap_128" --save-json="tilemap_128.json"
+./benchmarks.exe -- --run-benchmarks --include-benchmarks="tilemap_colliders/tilemap_vs_sprite/tilemap_256" --save-json="tilemap_256.json"
+./benchmarks.exe -- --run-benchmarks --include-benchmarks="tilemap_colliders/tilemap_vs_sprite/single_sprites_128" --save-json="single_sprites_128.json"
+./benchmarks.exe -- --run-benchmarks --include-benchmarks="tilemap_colliders/tilemap_vs_sprite/single_sprites_256" --save-json="single_sprites_256.json"
+
+
+
+./jq.exe -n --tab '
+	[inputs.benchmarks] | transpose[] | select(all(.results != {})) |
+	.[0].results = (
+		[[.[].results | to_entries] | transpose[] | select(all(.value != 0)) |
+		{key: .[0].key, value: {
+			raw_sprites_128: .[1].value,
+			raw_tilemap_128: .[2].value,
+			raw_ratio_128: (.[1].value / .[2].value),
+			raw_sprites_256: .[3].value,
+			raw_tilemap_256: .[4].value,
+			raw_ratio_256: (.[3].value / .[4].value),
+			baseline: .[0].value,
+			liquid_sprites_128: (.[1].value - .[0].value),
+			liquid_tilemap_128: (.[2].value - .[0].value),
+			liquid_ratio_128: ((.[1].value - .[0].value) / (.[2].value - .[0].value)),
+			liquid_sprites_256: (.[3].value - .[0].value),
+			liquid_tilemap_256: (.[4].value - .[0].value),
+			liquid_ratio_256: ((.[3].value - .[0].value) / (.[4].value - .[0].value))
+		}}] | from_entries
+	) | .[0]
+' physics_baseline.json physics_sprites_128.json physics_tilemap_128.json physics_sprites_256.json physics_tilemap_256.json
+
+
+baseline.json sprites_128.json tilemap_128.json sprites_256.json tilemap_256.json
+physics_baseline.json physics_sprites_128.json physics_tilemap_128.json physics_sprites_256.json physics_tilemap_256.json

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://db4onp5mmrjut"]
+
+[ext_resource type="Texture2D" uid="uid://ctopmbnc1hyat" path="res://supplemental/tiles.png" id="1_hymbp"]
+
+[node name="SceneSingleNode" type="Sprite2D"]
+texture = ExtResource("1_hymbp")
+flip_h = true
+flip_v = true
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)

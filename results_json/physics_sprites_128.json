@@ -1,0 +1,15 @@
+{
+	"benchmarks": [
+		{
+			"category": "Tilemap Colliders > Tilemap Vs Sprite",
+			"name": "Single Sprites 128",
+			"results": {
+				"idle": 3.576,
+				"physics": 0.08054,
+				"render_cpu": 2.958,
+				"render_gpu": 0.1717,
+				"time": 165.3
+			}
+		}
+	]
+}

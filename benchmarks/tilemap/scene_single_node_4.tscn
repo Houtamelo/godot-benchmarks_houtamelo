@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bib278gdgd1u3"]
+
+[ext_resource type="Texture2D" uid="uid://ctopmbnc1hyat" path="res://supplemental/tiles.png" id="1_bjdg3"]
+
+[node name="SceneSingleNode" type="Sprite2D"]
+rotation = 1.5708
+texture = ExtResource("1_bjdg3")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)

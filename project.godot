@@ -38,6 +38,12 @@ project/assembly_name="Godot Benchmarks"
 
 theme/default_theme_scale=1.5
 
+[physics]
+
+common/physics_ticks_per_second=30
+
 [rendering]
 
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
 occlusion_culling/use_occlusion_culling=true
